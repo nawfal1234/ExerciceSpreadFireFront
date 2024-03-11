@@ -18,9 +18,6 @@ export class GridService {
     return this.http.post<Grid>(`${this.baseURL}`, grid);
   }
 
-   private log(response:any){
-    console.table(response);
-}
 }
 
 
