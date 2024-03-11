@@ -7,18 +7,18 @@
           <label for="height">la longeur du grille :</label>
           <input type="number" class="form-control" id="height"
                   required
-                  pattern="\b(?:1?[0])\b"
+                  pattern="([2-9]|10)"
                  [(ngModel)]="grid.height" name="height"
                  #height="ngModel">
            <div [hidden]="height.valid || height.pristine">
-                 la longeur du grille est compris entre 2 et 11.
+                 la longeur du grille est compris entre 2 et 10.
            </div>
         </div>
         <div >
           <label for="width">la largeur du grille :</label>
           <input type="number" class="form-control" id="width"
                   required
-                  pattern="\b(?:1?[0])\b"
+                  pattern="([2-9]|10)"
                  [(ngModel)]="grid.width" name="width"
                  #width="ngModel">
            <div [hidden]="width.valid || width.pristine">
@@ -67,5 +67,5 @@
 </div>
 <div *ngIf="isCalculated">
   <h3>Nombre de cas réduites en cendre :{{gridResult.burnedCellsCount}}</h3>
-  <h3>Nombre d'étapes écoulées : {{gridResult}}</h3>
+  <h3>Nombre d'étapes écoulées : {{gridResult.steps}}</h3>
 </div>

@@ -10,12 +10,12 @@ import { ResultFire } from '../model/resultFire';
 })
 export class GridService {
 
-  private baseURL = 'http://localhost:8080/api/v1/walo';
+  private baseURL = 'http://localhost:8080/api/v1/start';
   grid : Grid;
   constructor(private http:HttpClient) { }
 
-  addGrid(howa : Grid) : Observable<Grid>{
-    return this.http.post<Grid>(`${this.baseURL}`, howa);
+  addGrid(grid : Grid) : Observable<Grid>{
+    return this.http.post<Grid>(`${this.baseURL}`, grid);
   }
 
    private log(response:any){
